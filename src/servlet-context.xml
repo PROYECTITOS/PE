@@ -27,11 +27,11 @@
 
 	<beans:bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
 		destroy-method="close">
-		<beans:property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<beans:property name="driverClassName" value="com.microsoft.sqlserver.jdbc.SQLServerDriver" />
 		<beans:property name="url"
-			value="jdbc:mysql://localhost:3306/TestDB" />
-		<beans:property name="username" value="pankaj" />
-		<beans:property name="password" value="pankaj123" />
+			value="jdbc:sqlserver://localhost:1433/BOOKSTORE2016" />
+		<beans:property name="username" value="sa" />
+		<beans:property name="password" value="sql" />
 	</beans:bean>
 
 	<!-- Hibernate 4 SessionFactory Bean definition -->
@@ -41,6 +41,19 @@
 		<beans:property name="annotatedClasses">
 			<beans:list>
 				<beans:value>com.libreria.spring.model.Person</beans:value>
+				<beans:value>com.libreria.spring.model.Author</beans:value>
+				<beans:value>com.libreria.spring.model.Book</beans:value>
+				<beans:value>com.libreria.spring.model.BookBinding</beans:value>
+				<beans:value>com.libreria.spring.model.Category</beans:value>
+				<beans:value>com.libreria.spring.model.CreditCardType</beans:value>
+				<beans:value>com.libreria.spring.model.Editorial</beans:value>
+				<beans:value>com.libreria.spring.model.Person</beans:value>
+				<beans:value>com.libreria.spring.model.Sale</beans:value>
+				<beans:value>com.libreria.spring.model.ShopCar</beans:value>
+				<beans:value>com.libreria.spring.model.ShopCarDetail</beans:value>
+				<beans:value>com.libreria.spring.model.User</beans:value>
+				<beans:value>com.libreria.spring.model.UserQuestion</beans:value>
+				<beans:value>com.libreria.spring.model.UserType</beans:value>
 			</beans:list>
 		</beans:property>
 		

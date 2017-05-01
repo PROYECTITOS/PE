@@ -11,25 +11,25 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "TB_GENERO")
-public class Category {
+@Table(name = "TB_ENCUADERNACION")
+public class BookBinding {
 
 	@Id
-	@Column(name = "cod_gen")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "cod_enc")
 	private int id;
-
-	@Column(name = "nom_gen")
-	private String name;
+	
+	@Column(name = "desc_enc")
+	private String descripcion;
 	
 	@OneToMany
 	private List<Book> books;
+	
+	public BookBinding(){}
 
-	public Category(){}
-
-	public Category(String name) {
+	public BookBinding(String descripcion) {
 		super();
-		this.name = name;
+		this.descripcion = descripcion;
 	}
 
 	public int getId() {
@@ -40,14 +40,14 @@ public class Category {
 		this.id = id;
 	}
 
-	public String getName() {
-		return name;
+	public String getDescripcion() {
+		return descripcion;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
 	}
-	/*
+
 	public List<Book> getBooks() {
 		return books;
 	}
@@ -55,7 +55,6 @@ public class Category {
 	public void setBooks(List<Book> books) {
 		this.books = books;
 	}
-	*/
 	
-
+	
 }

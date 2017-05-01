@@ -22,6 +22,7 @@ public class CategoryDAOImpl implements CategoryDAO{
 
 	@Override
 	public void registro(Category p) {
+		
 		Session session = sessionFactory.getCurrentSession();
 		session.persist(p);
 		log.info("Se registró correctamente : " + p.getName());
@@ -31,6 +32,7 @@ public class CategoryDAOImpl implements CategoryDAO{
 	public void actualiza(Category p) {
 		Session session = this.sessionFactory.getCurrentSession();
 		session.update(p);
+		
 		log.info("Persona updated successfully, Person Details=" + p);
 	}
 

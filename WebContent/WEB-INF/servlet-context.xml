@@ -50,7 +50,7 @@
 	<beans:bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
 		destroy-method="close">
 		<beans:property name="driverClassName" value="com.microsoft.sqlserver.jdbc.SQLServerDriver" />
-		<beans:property name="url" value="jdbc:sqlserver://localhost;database=LIBRERIA" />
+		<beans:property name="url" value="jdbc:sqlserver://localhost;DatabaseName=BOOKSTORE2016" />
 		<beans:property name="username" value="sa" />
 		<beans:property name="password" value="sql" />
 	</beans:bean>
@@ -66,13 +66,24 @@
 			<beans:property name="annotatedClasses">
 				<beans:list>
 					<beans:value>com.libreria.spring.model.Person</beans:value>
-					<beans:value>com.libreria.spring.model.Author</beans:value>
-					<beans:value>com.libreria.spring.model.Category</beans:value>
+				<beans:value>com.libreria.spring.model.Author</beans:value>
+				<beans:value>com.libreria.spring.model.Book</beans:value>
+				<beans:value>com.libreria.spring.model.BookBinding</beans:value>
+				<beans:value>com.libreria.spring.model.Category</beans:value>
+				<beans:value>com.libreria.spring.model.CreditCardType</beans:value>
+				<beans:value>com.libreria.spring.model.Editorial</beans:value>
+				<beans:value>com.libreria.spring.model.Person</beans:value>
+				<beans:value>com.libreria.spring.model.Sale</beans:value>
+				<beans:value>com.libreria.spring.model.ShopCar</beans:value>
+				<beans:value>com.libreria.spring.model.ShopCarDetail</beans:value>
+				<beans:value>com.libreria.spring.model.User</beans:value>
+				<beans:value>com.libreria.spring.model.UserQuestion</beans:value>
+				<beans:value>com.libreria.spring.model.UserType</beans:value>
 				</beans:list>
 			</beans:property>
 			<beans:property name="hibernateProperties">
 				<beans:props>
-					<beans:prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect
+					<beans:prop key="hibernate.dialect">org.hibernate.dialect.SQLServer2012Dialect
 					</beans:prop>
 					<beans:prop key="hibernate.show_sql">true</beans:prop>
 				</beans:props>

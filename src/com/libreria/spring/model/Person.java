@@ -21,6 +21,7 @@ public class Person {
 	
 	@Column(name="pais")
 	private String country;
+	
 
 	public int getId() {
 		return id;

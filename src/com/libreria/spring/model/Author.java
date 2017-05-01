@@ -1,10 +1,13 @@
 package com.libreria.spring.model;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -20,13 +23,31 @@ public class Author {
 	private String name;
 
 	@Column(name = "apep_aut")
-	private String f_last;
+	private String apellidoPaterno;
 
 	@Column(name = "apem_aut")
-	private String s_last;
+	private String apellidoMaterno;
+
 
 	@Column(name = "cod_pais")
-	private String country;
+	private String country;	//no sirve
+
+	//------------------------
+	@OneToMany
+	private List<Book> books;
+	
+	public Author(){
+		
+	}
+	
+
+	public Author(String name, String apellidoPaterno, String apellidoMaterno, String country) {
+		super();
+		this.name = name;
+		this.apellidoPaterno = apellidoPaterno;
+		this.apellidoMaterno = apellidoMaterno;
+		this.country = country;
+	}
 
 	public int getId() {
 		return id;
@@ -43,21 +64,22 @@ public class Author {
 	public void setName(String name) {
 		this.name = name;
 	}
+	
 
-	public String getF_last() {
-		return f_last;
+	public String getApellidoPaterno() {
+		return apellidoPaterno;
 	}
 
-	public void setF_last(String f_last) {
-		this.f_last = f_last;
+	public void setApellidoPaterno(String apellidoPaterno) {
+		this.apellidoPaterno = apellidoPaterno;
 	}
 
-	public String getS_last() {
-		return s_last;
+	public String getApellidoMaterno() {
+		return apellidoMaterno;
 	}
 
-	public void setS_last(String s_last) {
-		this.s_last = s_last;
+	public void setApellidoMaterno(String apellidoMaterno) {
+		this.apellidoMaterno = apellidoMaterno;
 	}
 
 	public String getCountry() {
@@ -67,5 +89,15 @@ public class Author {
 	public void setCountry(String country) {
 		this.country = country;
 	}
+
+	public List<Book> getBooks() {
+		return books;
+	}
+
+	public void setBooks(List<Book> books) {
+		this.books = books;
+	}
+	
+	
 
 }
